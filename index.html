@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Apa till Jul - Den Perfekta Gåvan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="snow-container" id="snow-container"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">JULAPA.SE</div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ge bort magi i år.<br>Ge bort en liten apa.</h1>
+                <p>Glöm strumpor och slipsar. I år handlar julen om ovillkorlig kärlek, små händer och stora ögon. En
+                    liten apa är gåvan som förändrar allt.</p>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="assets/monkey.png" alt="Söt julapa med paket" class="hero-image">
+            </div>
+
+            <a href="#" onclick="alert('Tyvärr, aporna är slut för i år! 🎅🐒'); return false;" class="cta-button">Köp
+                Din Julapa Nu</a>
+        </section>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🎁</span>
+                    <h3>Den Perfekta Storleken</h3>
+                    <p>Passar perfekt under granen (eller i granen). En liten apa tar liten plats men fyller hela rummet
+                        med glädje.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">❤️</span>
+                    <h3>Ovillkorlig Vänskap</h3>
+                    <p>En vän som alltid lyssnar, aldrig dömer och alltid är redo för att dela en mandarin eller två.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <h3>Garanterad Julstämning</h3>
+                    <p>Ingenting säger "God Jul" som en liten apa i tomteluva. Det är vetenskapligt bevisat (nästan).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <div class="hero-content" style="margin: 0 auto; text-align: center;">
+                <h2>Vad säger våra kunder?</h2>
+                <p>Ärliga omdömen från familjer som vågat.</p>
+            </div>
+            <div class="reviews-grid">
+                <!-- Positive Reviews -->
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Bästa julklappen någonsin! Barnen älskar den och den har knappt haft sönder
+                        något alls."</p>
+                    <p class="review-author">- Familjen Svensson</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Så söt! Den hjälper till och med att öppna paket (och äta upp innehållet)."
+                    </p>
+                    <p class="review-author">- Anna L.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Livet blev genast roligare med en liten apa i huset. Rekommenderas varmt!"
+                    </p>
+                    <p class="review-author">- Johan K.</p>
+                </div>
+
+                <!-- Chaos Reviews -->
+                <div class="review-card chaos">
+                    <div class="review-stars">★☆☆☆☆</div>
+                    <p class="review-text">"KAOS! Den åt upp granen, välte farmor och kastade köttbullar på katten."</p>
+                    <p class="review-author">- Upprörd Pappa</p>
+                </div>
+                <div class="review-card chaos">
+                    <div class="review-stars">★☆☆☆☆</div>
+                    <p class="review-text">"Hela julbordet förstört på 3 sekunder. Den doppade svansen i Janssons
+                        frestelse. Aldrig mer."</p>
+                    <p class="review-author">- Karin M.</p>
+                </div>
+                <div class="review-card chaos">
+                    <div class="review-stars">★☆☆☆☆</div>
+                    <p class="review-text">"Den stal alla julklappar och gömde dem i skorstenen. Polisen fick komma."
+                    </p>
+                    <p class="review-author">- Familjen Kaos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hamster-section">
+        <div class="container">
+            <div class="hamster-content">
+                <h2>Gillar du inte apor?</h2>
+                <p>Inga problem! Vi har även världens sötaste julhamstrar.</p>
+                <img src="assets/hamster.png" alt="Söt julhamster" class="hamster-image">
+                <br>
+                <a href="#" onclick="alert('Hamstrarna sover just nu! 🐹💤'); return false;" class="cta-button"
+                    style="background: linear-gradient(135deg, #94a3b8 0%, #475569 100%); font-size: 1rem; padding: 12px 30px;">Köp
+                    en Julhamster</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Julapa AB. Alla rättigheter reserverade. Inga apor skadades under skapandet av denna hemsida.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Snowfall effect
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+            document.getElementById('snow-container').appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 100);
+    </script>
+</body>
+
+</html>

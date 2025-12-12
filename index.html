@@ -11,10 +11,36 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-campaign.css">
 </head>
 
 <body>
     <div class="snow-container" id="snow-container"></div>
+
+    <!-- Campaign Popup -->
+    <div id="campaign-popup" class="campaign-popup-overlay">
+        <div class="campaign-popup-content">
+            <button class="close-popup" onclick="closePopup()">×</button>
+            <div class="popup-header">
+                <h2>⚠️ BLIXT-REA! ⚠️</h2>
+                <p>EXTRA SNABB LEVERANS!!!</p>
+            </div>
+            <div class="discount-display">
+                <span class="discount-amount">50%</span>
+                <span class="discount-text">RABATT</span>
+            </div>
+            <p class="timer-label">Erbjudandet går ut om:</p>
+            <div id="countdown-timer" class="countdown-timer">01:00:00</div>
+            <a href="#" class="cta-button popup-cta" onclick="campaignBuy()">KÖP APAN NU!</a>
+            <p class="stock-warning">Endast 3 apor kvar i lager!</p>
+        </div>
+    </div>
+
+    <!-- Live Visitor Counter -->
+    <div class="visitor-counter">
+        <span class="live-indicator"></span>
+        <span id="visitor-count">142</span> personer tittar på apor just nu
+    </div>
 
     <div class="container">
         <header>
@@ -152,6 +178,60 @@
         }
 
         setInterval(createSnowflake, 100);
+
+        // Campaign Popup Logic
+        const popup = document.getElementById('campaign-popup');
+
+        // Show popup after 1.5 seconds
+        setTimeout(() => {
+            popup.style.display = 'flex';
+        }, 1500);
+
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+
+        function campaignBuy() {
+            alert("Varför har apor aldrig fickpengar?\n\nFör att de äter upp alla bananer! 🍌\n\n(Och tyvärr har vi sålt slut på aporna också, så du får behålla dina pengar!)");
+            return false;
+        }
+
+        // Countdown Timer (1 Hour)
+        let totalSeconds = 3600; // 1 hour
+        const timerElement = document.getElementById('countdown-timer');
+
+        function updateTimer() {
+            if (totalSeconds <= 0) {
+                timerElement.innerText = "00:00:00";
+                return;
+            }
+
+            const h = Math.floor(totalSeconds / 3600);
+            const m = Math.floor((totalSeconds % 3600) / 60);
+            const s = totalSeconds % 60;
+
+            timerElement.innerText =
+                `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+
+            totalSeconds--;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call
+
+        // Visitor Counter
+        const visitorElement = document.getElementById('visitor-count');
+        let currentVisitors = 142;
+
+        function updateVisitors() {
+            const change = Math.floor(Math.random() * 10) - 4; // Random change between -4 and +5
+            currentVisitors += change;
+            if (currentVisitors < 50) currentVisitors = 50; // Minimum limit
+            if (currentVisitors > 500) currentVisitors = 500; // Maximum limit
+            visitorElement.innerText = currentVisitors;
+        }
+
+        setInterval(updateVisitors, 2500); // Update every 2.5 seconds
     </script>
 </body>
 

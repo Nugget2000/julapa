@@ -19,6 +19,13 @@
     <div class="container">
         <header>
             <div class="logo">JULAPA.SE</div>
+            <div class="user-actions">
+                <button id="openLoginBtn" class="login-btn">Logga in</button>
+                <div id="userInfo" style="display:none;">
+                    <span id="usernameDisplay"></span>
+                    <button id="logoutBtn" class="login-btn logout-btn">Logga ut</button>
+                </div>
+            </div>
         </header>
 
         <section class="hero">
@@ -133,6 +140,47 @@
         </div>
     </footer>
 
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="loginFormContainer">
+                <h2>Logga in</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Användarnamn</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Lösenord</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Logga in</button>
+                    <p class="error-msg" id="loginError"></p>
+                </form>
+                <p class="switch-form">Har du inget konto? <a href="#" id="switchToRegister">Registrera dig</a></p>
+            </div>
+
+            <div id="registerFormContainer" style="display:none;">
+                <h2>Registrera dig</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="regUsername">Användarnamn</label>
+                        <input type="text" id="regUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Lösenord (minst 8 tecken)</label>
+                        <input type="password" id="regPassword" name="password" required minlength="8">
+                    </div>
+                    <button type="submit" class="submit-btn">Registrera</button>
+                    <p class="error-msg" id="registerError"></p>
+                </form>
+                <p class="switch-form">Har du redan ett konto? <a href="#" id="switchToLogin">Logga in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
     <script>
         // Snowfall effect
         function createSnowflake() {

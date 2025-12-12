@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.D.P.R. - General Disturbance Primate Regulations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-content {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .legal-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .legal-content p {
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .legal-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .legal-content li {
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="snow-container" id="snow-container"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">JULAPA.SE</a></div>
+        </header>
+
+        <section class="hero" style="min-height: auto; padding-top: 20px;">
+            <div class="hero-content">
+                <h1>G.D.P.R.</h1>
+                <p style="font-size: 1.5rem; color: #fbbf24; font-weight: bold;">General Disturbance Primate Regulations</p>
+                <p>Eller: Hur vi hanterar (och tappar bort) din data.</p>
+            </div>
+        </section>
+
+        <div class="legal-content">
+            <h2>1. Insamling av Data (och Saker)</h2>
+            <p>När du skaffar en apa insamlas automatiskt en mängd data. Och med data menar vi dina strumpor, dina nycklar, din telefon och den där mackan du tänkte äta till lunch.</p>
+            <p>Vi kan inte garantera att denna data lagras säkert. Troligtvis kommer den att hittas bakom soffan eller nedspolad i toaletten.</p>
+
+            <div class="warning-box">
+                <h3 style="color: #ef4444; margin-top: 0;">Varning: Ingen Sekretess</h3>
+                <p style="margin-bottom: 0;">En apa har inget koncept av "privatliv". Om du har hemligheter, skriv inte ner dem. Om du har en dagbok, göm den i ett kassaskåp. Apan <em>kommer</em> att läsa den högt för dina gäster.</p>
+            </div>
+
+            <h2>2. Cookies</h2>
+            <p>Vi använder inte cookies på den här hemsidan.</p>
+            <p>Varför? För att apan åt upp dem. Alla. Även chokladflarnen. Vi försökte stoppa den, men den var för snabb.</p>
+
+            <h2>3. Rätten att bli Glömd (Right to be Forgotten)</h2>
+            <p>Du har rätten att bli glömd. Faktum är att apan kommer att glömma vem du är så fort den ser en banan eller något som glittrar.</p>
+            <p>Om du vill att vi ska radera din information, skicka ett brev. Apan kommer att använda det som konfetti eller origami. Resultatet är detsamma: informationen är borta.</p>
+
+            <h2>4. Tredjepartsdelning</h2>
+            <p>Vi delar inte din data med tredje part. Däremot kan din apa bestämma sig för att dela dina underkläder med grannarna genom att kasta ut dem genom fönstret. Detta ligger utanför vår kontroll och går under klausulen "Force Majeure" (eller "Force Monkey").</p>
+
+            <h2>5. Säkerhetsåtgärder</h2>
+            <p>Vi har implementerat följande säkerhetsåtgärder:</p>
+            <ul>
+                <li>Ett lås på skafferiet (Apan dyrkade upp det).</li>
+                <li>Lösenordsskydd på datorn (Apan hamrade på tangentbordet tills den kom in).</li>
+                <li>Övervakningskamera (Apan stal kameran och tog selfies).</li>
+            </ul>
+
+            <p style="text-align: center; margin-top: 40px; font-style: italic;">Genom att använda denna webbplats (och skaffa en apa) godkänner du att ditt privatliv numera är ett minne blott.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Julapa AB. <a href="index.html" style="color: #64748b;">Tillbaka till startsidan</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Snowfall effect
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+            document.getElementById('snow-container').appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 100);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logga in - En Apa till Jul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="snow-container" id="snow-container"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">JULAPA.SE</a></div>
+        </header>
+
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <div class="auth-tab" id="tab-login" onclick="switchTab('login')">Logga in</div>
+                <div class="auth-tab active" id="tab-register" onclick="switchTab('register')">Skapa konto</div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form">
+                <h2>Välkommen tillbaka!</h2>
+                <p style="margin-bottom: 20px; color: #94a3b8;">Dina apor saknar dig.</p>
+
+                <div class="form-group">
+                    <label>Användarnamn</label>
+                    <input type="text" id="login-username" class="form-input" placeholder="T.ex. Rambo-Baboon">
+                </div>
+                <div class="form-group">
+                    <label>Lösenord</label>
+                    <input type="password" id="login-password" class="form-input">
+                </div>
+                <div id="login-error" class="error-msg"></div>
+
+                <button onclick="handleLogin()" class="cta-button" style="width: 100%; font-size: 1rem; padding: 15px; margin-top: 20px; border: none; cursor: pointer;">Logga in</button>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="auth-form active">
+                <h2>Bli en av oss!</h2>
+                <p style="margin-bottom: 20px; color: #94a3b8;">Få ett unikt namn och en vän för livet.</p>
+
+                <div class="form-group">
+                    <label>Lösenord (Max 4 tecken, måste innehålla 'apa')</label>
+                    <input type="password" id="reg-password" class="form-input" placeholder="****">
+                </div>
+                <div id="reg-error" class="error-msg"></div>
+
+                <button onclick="handleRegister()" class="cta-button" style="width: 100%; font-size: 1rem; padding: 15px; margin-top: 20px; border: none; cursor: pointer;">Skapa konto</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // Snowfall effect (copied for consistency)
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+            document.getElementById('snow-container').appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 100);
+
+        // Check query param to see if we should start on login tab
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('tab') === 'login') {
+            switchTab('login');
+        }
+    </script>
+</body>
+
+</html>

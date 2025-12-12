@@ -133,7 +133,11 @@
         </div>
     </footer>
 
+    <script src="auth.js"></script>
     <script>
+        // Check login status on page load
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
+
         // Snowfall effect
         function createSnowflake() {
             const snowflake = document.createElement('div');

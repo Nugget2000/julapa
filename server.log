@@ -1,0 +1,6 @@
+127.0.0.1 - - [12/Dec/2025 09:17:56] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2025 09:17:56] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2025 09:17:56] "GET /assets/monkey.png HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2025 09:17:56] "GET /assets/hamster.png HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2025 09:17:56] "GET /auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Dec/2025 09:17:58] "GET /login.html?tab=login HTTP/1.1" 200 -

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
     <title>En Apa till Jul - Den Perfekta Gåvan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,7 @@
     <!-- Campaign Popup -->
     <div id="campaign-popup" class="campaign-popup-overlay">
         <div class="campaign-popup-content">
-            <button class="close-popup" onclick="closePopup()">×</button>
+            <button class="close-popup">×</button>
             <div class="popup-header">
                 <h2>⚠️ BLIXT-REA! ⚠️</h2>
                 <p>EXTRA SNABB LEVERANS!!!</p>
@@ -31,7 +32,7 @@
             </div>
             <p class="timer-label">Erbjudandet går ut om:</p>
             <div id="countdown-timer" class="countdown-timer">01:00:00</div>
-            <a href="#" class="cta-button popup-cta" onclick="campaignBuy()">KÖP APAN NU!</a>
+            <a href="#" class="cta-button popup-cta">KÖP APAN NU!</a>
             <p class="stock-warning">Endast 3 apor kvar i lager!</p>
         </div>
     </div>
@@ -58,7 +59,7 @@
                 <img src="assets/monkey.png" alt="Söt julapa med paket" class="hero-image">
             </div>
 
-            <a href="#" onclick="alert('Tyvärr, aporna är slut för i år! 🎅🐒'); return false;" class="cta-button">Köp
+            <a href="#" class="cta-button js-hero-cta">Köp
                 Din Julapa Nu</a>
         </section>
     </div>
@@ -144,7 +145,7 @@
                 <p>Inga problem! Vi har även världens sötaste julhamstrar.</p>
                 <img src="assets/hamster.png" alt="Söt julhamster" class="hamster-image">
                 <br>
-                <a href="#" onclick="alert('Hamstrarna sover just nu! 🐹💤'); return false;" class="cta-button"
+                <a href="#" class="cta-button js-hamster-cta"
                     style="background: linear-gradient(135deg, #94a3b8 0%, #475569 100%); font-size: 1rem; padding: 12px 30px;">Köp
                     en Julhamster</a>
             </div>
@@ -159,80 +160,7 @@
         </div>
     </footer>
 
-    <script>
-        // Snowfall effect
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-
-            document.getElementById('snow-container').appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
-        }
-
-        setInterval(createSnowflake, 100);
-
-        // Campaign Popup Logic
-        const popup = document.getElementById('campaign-popup');
-
-        // Show popup after 1.5 seconds
-        setTimeout(() => {
-            popup.style.display = 'flex';
-        }, 1500);
-
-        function closePopup() {
-            popup.style.display = 'none';
-        }
-
-        function campaignBuy() {
-            alert("Varför har apor aldrig fickpengar?\n\nFör att de äter upp alla bananer! 🍌\n\n(Och tyvärr har vi sålt slut på aporna också, så du får behålla dina pengar!)");
-            return false;
-        }
-
-        // Countdown Timer (1 Hour)
-        let totalSeconds = 3600; // 1 hour
-        const timerElement = document.getElementById('countdown-timer');
-
-        function updateTimer() {
-            if (totalSeconds <= 0) {
-                timerElement.innerText = "00:00:00";
-                return;
-            }
-
-            const h = Math.floor(totalSeconds / 3600);
-            const m = Math.floor((totalSeconds % 3600) / 60);
-            const s = totalSeconds % 60;
-
-            timerElement.innerText =
-                `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-
-            totalSeconds--;
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer(); // Initial call
-
-        // Visitor Counter
-        const visitorElement = document.getElementById('visitor-count');
-        let currentVisitors = 142;
-
-        function updateVisitors() {
-            const change = Math.floor(Math.random() * 10) - 4; // Random change between -4 and +5
-            currentVisitors += change;
-            if (currentVisitors < 50) currentVisitors = 50; // Minimum limit
-            if (currentVisitors > 500) currentVisitors = 500; // Maximum limit
-            visitorElement.innerText = currentVisitors;
-        }
-
-        setInterval(updateVisitors, 2500); // Update every 2.5 seconds
-    </script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>

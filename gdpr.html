@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G.D.P.R. - General Disturbance Primate Regulations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,26 +108,7 @@
         </div>
     </footer>
 
-    <script>
-        // Snowfall effect
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-
-            document.getElementById('snow-container').appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
-        }
-
-        setInterval(createSnowflake, 100);
-    </script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>
